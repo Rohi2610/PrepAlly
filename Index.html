@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PrepAlly</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<script>
+  const text = "Your ultimate Data Preprocessing Ally!";
+  const speed = 50;
+  const eraseSpeed = 30;
+  const delayBetweenLoops = 1000;
+  let index = 0;
+  let isDeleting = false;
+
+  function typeText() {
+      const typedTextEl = document.getElementById("typed-text");
+
+      if (isDeleting) {
+          typedTextEl.textContent = text.substring(0, index--);
+      } else {
+          typedTextEl.textContent = text.substring(0, index++);
+      }
+
+      if (!isDeleting && index === text.length + 1) {
+          isDeleting = true;
+          setTimeout(typeText, delayBetweenLoops);
+      } else if (isDeleting && index === 0) {
+          isDeleting = false;
+          setTimeout(typeText, delayBetweenLoops);
+      } else {
+          setTimeout(typeText, isDeleting ? eraseSpeed : speed);
+      }
+  }
+
+  window.onload = typeText;
+</script>
+
+<body>
+
+    <nav class="navbar">
+        <div class="navdiv">
+            <a href="#" class="title">PrepAlly</a>
+            <ul>
+                <li><a href="Index.html" class="active">Home</a></li>
+                <li><a href="Preprocess.html">Preprocess</a></li>
+                <li><a href="Visualize.html">Visualize</a></li>
+                <li><a href="Clean.html">Clean</a></li>
+                <li><a href="About.html">About</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="hero-section">
+        <h1 class="typing-text"><span id="typed-text"></span><span class="cursor">|</span></h1>
+    </main>
+
+    <!-- Features Section -->
+    <section class="features-section">
+        <h1>What we offer?</h1><br>
+        <div class="features-container">
+            <div class="feature-card">
+                <div class="card-content" data-title="Preprocess" data-desc="Structure and format your data with ease using our intelligent automation tools.">
+                    Preprocess
+                </div>
+            </div>
+            <div class="feature-card">
+                <div class="card-content" data-title="Clean" data-desc="Detect and fix missing values, duplicates, and inconsistencies effortlessly.">
+                    Clean
+                </div>
+            </div>
+            <div class="feature-card">
+                <div class="card-content" data-title="Visualize" data-desc="Get instant, beautiful charts that help you understand your data quickly.">
+                    Visualize
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Us Section -->
+    <section class="why-us">
+        <h2>Why Choose Us?</h2>
+        <div class="why-us-content">
+            <div class="why-us-card">
+                <h3>Intuitive</h3>
+                <p>Our platform is designed to be user-friendly and intuitive for everyone, regardless of experience level.</p>
+            </div>
+            <div class="why-us-card">
+                <h3>Easy</h3>
+                <p>Data preprocessing has never been easier. Simply upload your data and let our system handle the rest.</p>
+            </div>
+            <div class="why-us-card">
+                <h3>Visual</h3>
+                <p>Enjoy visual representations of your data for better understanding and analysis at every step of the process.</p>
+            </div>
+            <div class="why-us-card">
+                <h3>GUI-Based</h3>
+                <p>No need for coding knowledge! Our graphical interface allows you to preprocess data with just a few clicks.</p>
+            </div>
+            <div class="why-us-card">
+                <h3>No Account Required</h3>
+                <p>Access all features instantly without the need to sign up or log in. No barriers to start preprocessing your data.</p>
+            </div>
+            <div class="why-us-card">
+                <h3>No Data Stored</h3>
+                <p>Your privacy is our priority. We do not store or share any of your data. Everything stays with you.</p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.querySelectorAll('.card-content').forEach(el => {
+            const desc = el.getAttribute('data-desc');
+            const descElement = document.createElement('div');
+            descElement.classList.add('card-desc-float');
+            descElement.innerText = desc;
+            el.parentElement.appendChild(descElement);
+        });
+    </script>
+
+</body>
+</html>
