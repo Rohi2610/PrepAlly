@@ -22,7 +22,8 @@ main {
     height: 15vh; /* reduce height */
     text-align: center;
     background-color: #f4f4f4;
-    padding-bottom: 40px; /* push text up */
+    padding-bottom: 20px; /* push text up */
+    padding-top: 10px;
 }
 
 .typing-text {
@@ -269,7 +270,7 @@ h1 {
 }
 
 .features-section {
-    padding: 60px 20px;
+    padding: 40px 20px;
     background-color: #fff;
     text-align: center;
 }
@@ -282,15 +283,35 @@ hr{
     margin-bottom: 40px;
 }
 
-.features-container {
+.Features {
     display: flex;
     flex-direction: column;
-    align-items: center;
     gap: 2rem;
     margin-top: 2rem;
+    width:100%
   }
-  
-  .feature-card {
+
+.Background{
+    background-color: #444;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width:100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 40px;
+    padding: 20px
+}
+
+.image{
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+
+}
+
+.Preprocess-card, .Clean-card, .Visualize-card {
+    flex:1;
     width: 100%;
     max-width: 600px; /* Increased max width */
     background: linear-gradient(135deg, #6e8efb, #a777e3);
@@ -298,23 +319,38 @@ hr{
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease;
     color: white;
-  }
-  
-  .card-content {
+    position: relative;
+    overflow: hidden;
+}
+
+.Preprocess-card {
+    margin-right: auto; 
+}
+
+.Clean-card {
+    margin-left: auto; 
+}
+
+.Visualize-card {
+    margin-right: auto; 
+}
+
+.card-content {
     padding: 40px; /* Increased padding */
     font-size: 1.8em; /* Larger text */
     font-weight: bold;
     text-align: center;
-  }
-   
+}
   
-  .feature-card:hover {
-    transform: translateY(-5px);
-  }
-  
+.Preprocess-card:hover, 
+.Clean-card:hover, 
+.Visualize-card:hover {
+transform: translateY(-5px);
+}
+
 
     
-  .card-desc-float {
+.card-desc-float {
     position: absolute;
     top: 50%; /* Vertically center the description */
     left: 50%;
@@ -325,12 +361,16 @@ hr{
     z-index: 1;
   }
   
-  .feature-card:hover .card-content {
+  .Preprocess-card:hover .card-content,
+  .Clean-card:hover .card-content, 
+  .Visualize-card:hover .card-content {
     opacity: 0;
     transform: translateY(-10px);
   }
   
-  .feature-card:hover .card-desc-float {
+  .Preprocess-card:hover .card-desc-float, 
+  .Clean-card:hover .card-desc-float, 
+  .Visualize-card:hover .card-desc-float {
     opacity: 1;
     transform: translate(-50%, -50%); /* Ensure it remains centered */
   }
