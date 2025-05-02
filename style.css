@@ -2,6 +2,9 @@ body {
     font-size: 18px;
     line-height: 1.6;
     color: #333;
+    margin: 0;
+    font-family: 'Inter', 'Roboto', 'Helvetica', sans-serif;
+    background-color: #f4f4f4;
 }
 
 h3 {
@@ -127,93 +130,6 @@ main {
     left: 0;
 }
 
-body {
-    margin: 0;
-    font-family: 'Inter', 'Roboto', 'Helvetica', sans-serif;
-    background-color: #f4f4f4;
-}
-
-main {
-    margin: 20px;
-}
-
-h1 {
-    text-align: center;
-}
-
-.navbar {
-    background-color: rgb(24, 17, 32);
-    padding: 10px 0;
-    margin: 0;
-    overflow: hidden;
-}
-
-.navdiv {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    width: 100%;
-    padding: 0 40px;
-}
-
-.title {
-    color: white;
-    text-decoration: none;
-    font-size: 24px;
-    font-weight: 600;
-    margin-right: 50px;
-}
-
-.navdiv ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    gap: 30px;
-    justify-content: center;
-    flex-grow: 1;
-}
-
-.navdiv ul li {
-    display: inline-block;
-}
-
-.navdiv ul li a {
-    color: white;
-    text-decoration: none;
-    font-size: 14px;
-    font-weight: bold;
-    padding: 10px 15px;
-    display: block;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-    transition: color 0.3s;
-    border-radius: 10px;
-}
-
-.navdiv ul li a:hover {
-    color: rgb(135, 79, 184);
-    border-radius: 10px;
-}
-
-.navdiv ul li a::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 70%;
-    background: linear-gradient(to left, rgb(149, 99, 196), rgb(99, 99, 196), rgba(149, 99, 196, 0));
-    transition: all 0.3s ease-in-out;
-    opacity: 0;
-}
-
-.navdiv ul li a:hover::after {
-    opacity: 0.5;
-    left: 0;
-}
-
 .card-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -286,52 +202,56 @@ hr{
 .Features {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    /* gap: 2rem; */
     margin-top: 2rem;
-    width:100%
-  }
-
-.Background{
-    background-color: #444;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
     width:100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    gap: 40px;
-    padding: 20px
 }
 
-.image{
-    max-width: 100%;
-    height: auto;
-    border-radius: 12px;
+.Background{
+    position: relative;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    position: sticky;
+    top:0;
+    transition: left 1s ease;
+    z-index: 1;
+}
 
+.Background img{
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
 }
 
 .Preprocess-card, .Clean-card, .Visualize-card {
     flex:1;
     width: 100%;
-    max-width: 600px; /* Increased max width */
-    background: linear-gradient(135deg, #6e8efb, #a777e3);
+    max-width: 500px; /* Increased max width */
+    background: linear-gradient(135deg, #6d4da7, #2b0b51);
     border-radius: 16px;
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease;
     color: white;
-    position: relative;
+    /* position: relative; */
     overflow: hidden;
+    position: absolute;
+    top: 40%;
 }
 
 .Preprocess-card {
-    margin-right: auto; 
+    left:5%;
+    margin-right:auto; 
 }
 
 .Clean-card {
+    right: 5%;
     margin-left: auto; 
 }
 
 .Visualize-card {
+    left: 5%;
     margin-right: auto; 
 }
 
@@ -347,9 +267,7 @@ hr{
 .Visualize-card:hover {
 transform: translateY(-5px);
 }
-
-
-    
+   
 .card-desc-float {
     position: absolute;
     top: 50%; /* Vertically center the description */
