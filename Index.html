@@ -59,20 +59,22 @@
         <h1>What we offer?</h1><br>
         <div class="Features">
             <div class="Background">
+                <img src="images/Preprocessing.png" alt:="Preprocessing">
                 <div class="Preprocess-card">
                     <div class="card-content" data-title="Preprocess" data-desc="Structure and format your data with ease using our intelligent automation tools.">
                         Preprocess
                     </div>
                 </div>
-                <div class="image">
-                    <img src="images/cat1.jpeg" alt:="Cat1">
-                </div> 
+                <!-- <div class="image">
+                    <img src="images/Preprocessing.png" alt:="Preprocessing">
+                </div>  -->
             </div>
 
             <div class="Background">
-                <div class="image">
+                <!-- <div class="image">
                     <img src="images/sddefault.jpg" alt:="Cat2">
-                </div>
+                </div> -->
+                <img src="images/Cleaning.png" alt:="Cat2">
                 <div class="Clean-card">
                     <div class="card-content" data-title="Clean" data-desc="Detect and fix missing values, duplicates, and inconsistencies effortlessly.">
                         Clean
@@ -86,11 +88,29 @@
                         Visualize
                     </div>
                 </div>
-                <div class="image">
+                <!-- <div class="image">
                     <img src="images/images.jpeg" alt:="Cat3">
-                </div>
+                </div> -->
+                <img src="images/Visualization.png" alt:="Cat3">
             </div> 
         </div>
+
+        <script>
+            const sections = document.querySelectorAll('.Background');
+          
+            const observer = new IntersectionObserver((entries) => {
+              entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                  entry.target.classList.add('animate');
+                } else {
+                  entry.target.classList.remove('animate');
+                }
+              });
+            }, { threshold: 0.5 });
+          
+            sections.forEach(section => observer.observe(section));
+        </script>
+
     </section>
 
     <!-- Why Us Section -->
